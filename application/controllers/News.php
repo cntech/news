@@ -58,5 +58,11 @@ class News extends CI_Controller {
     
   }
   
+  public function delete($slug = NULL)
+  {
+    $this->news_model->delete_news($slug);
+    redirect(site_url('news'));
+  }
+  
 }
 

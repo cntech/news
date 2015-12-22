@@ -32,6 +32,15 @@ class News_model extends CI_Model {
     
     return $this->db->insert('news', $data);
   }
+  
+  public function delete_news($slug = FALSE)
+  {
+    if($slug !== FALSE)
+    {
+      $this->load->helper('url');
+      $this->db->delete('news', array('slug' => $slug));
+    }
+  }
 
 }
 
